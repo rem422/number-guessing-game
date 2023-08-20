@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #222;
+    font-family: sans-serif;
+}
+
+.btn {
+    padding: 1.2rem 2rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    text-align: center;
+    color: #fff;
+}
+
+.game_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.game_header .subtitle {
+    font-size: 1.2rem;
+}
+
+.game_title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 1rem;
+    margin-bottom: 3rem;
+}
+
+.secret_number {
+    margin-bottom: 2rem;
+    background-color: white;
+    width: 10rem;
+    padding: 1.4rem 4rem;
+    margin: 0 auto;
+    color: #111;
+    font-size: 2rem;
+    font-weight: 800;
+    /* position: relative; */
+}
+
+.secret_number::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: translate(-50%, -50px);
+    background-color: #fff;
+}
+
+.game_info {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.game_info .left {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.game_info .left .input {
+    padding: 2rem 1rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+}
+
+.game_info .right {
+    text-align: left;
+}
+
+.game_info .right .game_result {
+    padding-bottom: 5rem;
+}
