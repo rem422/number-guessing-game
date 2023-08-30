@@ -25,33 +25,20 @@ document.querySelector('.check').addEventListener('click', () => {
         secretNumber.style.width = '20rem';
         highScore = score;
         document.querySelector('.highscore').textContent = highScore;
-    } 
-    // When guess is too high
-    else if (guess > randomNumber) {
-        if (score > 1) {
-            message.textContent = '📈 Too high!';
-            score--;
-            document.querySelector('.score').textContent = score;
-        } else {
-            message.textContent = '😞 You loose!';
-            document.querySelector('.score').textContent = 0;
-            document.querySelector('body').style.backgroundColor = 'red';
-        }
-    } 
-    // When guess is to low
-    else if (guess < randomNumber) {
-        if (score > 1) {
-            message.textContent = '📉 Too Low!';
-            score--;
-            document.querySelector('.score').textContent = score;
-        } else {
-            message.textContent = '😞 You loose!';
-            document.querySelector('.score').textContent = 0;
-            document.querySelector('body').style.backgroundColor = 'red';
-        }
 
-    }
-})
+        // When the guess is wrong
+    } else if (guess !== secretNumber) {
+        if (score > 1) {
+            message.textContent = guess > secretNumber ? '📈 Too high!' : '📉 Too Low!';
+            score--;
+            document.querySelector('.score').textContent = score;
+        } else {
+            message.textContent = '😞 You loose!';
+            document.querySelector('.score').textContent = 0;
+            document.querySelector('body').style.backgroundColor = 'red';
+        }
+    } 
+});
 
 // Restarts the game
 document.querySelector('.again').addEventListener('click', () => {
@@ -61,16 +48,4 @@ document.querySelector('.again').addEventListener('click', () => {
     message.textContent = 'Start guessing...';
     secretNumber.style.width = '10rem';
     document.querySelector('.input').value = "";
-})
-
-
-
-
-
-
-
-
-
-
-
-
+});
